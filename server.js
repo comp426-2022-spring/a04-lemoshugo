@@ -1,9 +1,12 @@
 const express = require('express');
+const morgan = require('morgan');
+const fs = require('fs');
+const db = require("./database.js");
 
 const app = express();
 const argv = require('minimist')(process.argv.slice(2));
 argv['port', 'debug', 'log', 'help']
-const port = argv.port || 5000
+const port = argv["port"] || 5555
 
 debug = false;
 
@@ -16,6 +19,8 @@ if (argv.debug) {
 if (!argv.log) {
     log = false;
 }
+
+console.log(argv);
 
 // Start an app server
 
