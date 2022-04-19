@@ -3,7 +3,7 @@ const { appendFile } = require('fs');
 
 const db = new Database('log.db');
 
-const stmt = logdb.prepare(`SELECT name FROM sqlite_master WHERE type='table' and name='accesslog';`);
+const stmt = db.prepare(`SELECT name FROM sqlite_master WHERE type='table' and name='accesslog';`);
 
 let row = stmt.get();
 
