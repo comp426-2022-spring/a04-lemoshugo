@@ -75,7 +75,7 @@ app.use( (req, res, next) => {
 if (args.debug == true) {
     app.get('/app/log/access', (req, res) => {
         const select = database.prepare('SELECT * FROM accesslog').all();
-        res.status(200).json(select_statement);
+        res.status(200).json(select);
     })
 
     app.get('/app/error', (req, res) => {
